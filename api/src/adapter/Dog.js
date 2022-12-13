@@ -110,6 +110,39 @@ async function getDogApiId(idDog) {
     throw { status: error.status ?? 404, message: error };
   }
 }
+async function getDogDBId(idDog) {
+    try {
+        const dataDB = await Dog.findByPk(idDog, {
+          attributes: { exclude: ["createdAt", "updatedAt"] },
+          include: {
+            model: Temper,
+            attributes: ["name"],
+            through: { attributes: [] },
+        },
+    });
+    const temperament = dataDB.tempers.map(({name})=>name).join(", ");
+    const {id,name,height,weight,life_span} = dataDB;
+   return ({id,name,temperament,weight,height,life_span});
+    } catch (error) {
+        throw {status:error.status??500,message:error};
+    }
+};
+async function postDogDB(datosDog) {
+  const { name, height, weight, life_span, tempers } = datosDog;
+  try {
+      const [dogCreate, createDog] = await Dog.findOrCreate({
+        where: { name: name, height: height, weight: weight, life_span: life_span },
+      });
+      await dogCreate.addTemper(tempers);
+      if (createDog) {
+        return dogCreate;
+      } else {
+        throw { status: 409, message: "ya existe el perro en la base de datos" };
+      }
+  } catch (error) {
+    throw {status:error.status??400,message:error}
+  }
+}
 
 module.exports = {
   getDogApi,
@@ -117,4 +150,6 @@ module.exports = {
   getDogApiName,
   getDogDBName,
   getDogApiId,
+  getDogDBId,
+  postDogDB,
 };

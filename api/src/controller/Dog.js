@@ -1,4 +1,4 @@
-const {getDogApi,getDogApiName,getDogDB,getDogDBName,getDogApiId} = require('../adapter/Dog');
+const {getDogApi,getDogApiName,getDogDB,getDogDBName,getDogApiId,postDogDB,getDogDBId} = require('../adapter/Dog');
 
 class Dog{
     async getDog(req,res,next){
@@ -31,8 +31,22 @@ class Dog{
     async getDogId(req,res,next){
         const {id} = req.params;
         try {
-            const dataApi = await getDogApiId(id);
-            res.status(200).json(dataApi);
+            if(id.length>8){
+                const dataDB = await getDogDBId(id);
+                res.status(200).json(dataDB);
+            }else{
+                const dataApi = await getDogApiId(id);
+                res.status(200).json(dataApi);
+            }
+        } catch (error) {
+            next(error);
+        }
+    };
+    async postDog(req,res,next){
+        const dogData = req.body;
+        try {
+            const dogCreate = await postDogDB(dogData);
+            res.status(201).json(dogCreate);
         } catch (error) {
             next(error);
         }
