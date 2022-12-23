@@ -35,7 +35,8 @@ async function getDogDB() {
         through: { attributes: [] },
       },
     });
-    return dogsDB;
+    const dogs = dogsDB.map(({id,name,weight,tempers})=>({id,name,weight,temperament:tempers.map(({name})=>name).join(", ")}))
+    return dogs;
   } catch (error) {
     throw { status: 500, message: error };
   }
