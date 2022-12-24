@@ -17,7 +17,7 @@ function Select({ name: nameProp, options }) {
       <select name={name}>{option}</select>
       <button>Filtrar</button>
     </div>
-  );
+  )
 }
 
 export default Select;

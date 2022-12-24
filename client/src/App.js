@@ -9,13 +9,13 @@ function App() {
     <div className="App">
     {pathname === "/"?<Landing/>:
     <Switch>
-      <Route path="/home">
+      <Route exact path="/home">
         <Home/>
       </Route>
-      <Route path="/create">
+      <Route exact path="/create">
         <h1>Create</h1>
       </Route>
-      <Route path="/dog/:id">
+      <Route exact path="/dog/:id">
         <h1>Dog detail</h1>
       </Route>
       <Route path="*">

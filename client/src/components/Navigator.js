@@ -14,7 +14,7 @@ function Navigator() {
         ]}
       />
     </div>
-  );
+  )
 }
 
 export default Navigator;
