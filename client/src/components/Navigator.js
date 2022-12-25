@@ -2,10 +2,11 @@ import React from "react";
 import Filter from "./Filter";
 import Select from "./Select";
 
-function Navigator() {
+function Navigator({filterTemper,filterDogName}) {
   return (
     <div>
-      <Filter name="Dogs" text="Ingresa las iniciales de la raza" />
+      <Filter name="Tempers" text="Ingresa las iniciales de la raza" func={filterDogName}/>
+      <Filter name="DogName" text="Ingresa iniciales del temperamento" func={filterTemper}/>
       <Select
         name="prueba"
         options={[
