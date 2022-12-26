@@ -56,7 +56,7 @@ async function getDogApiName(nameDog) {
       }) => ({
         id,
         name,
-        backgroudImage: `"https://cdn2.thedogapi.com/images/${reference_image_id}.jpg"`,
+        backgroudImage: `https://cdn2.thedogapi.com/images/${reference_image_id}.jpg`,
         temperament,
         weight,
       })
@@ -101,7 +101,7 @@ async function getDogApiId(idDog) {
     return {
       id,
       name,
-      backgroudImage: `"https://cdn2.thedogapi.com/images/${reference_image_id}.jpg"`,
+      backgroudImage: `https://cdn2.thedogapi.com/images/${reference_image_id}.jpg`,
       temperament,
       weight,
       height,
