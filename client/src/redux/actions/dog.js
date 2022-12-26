@@ -3,6 +3,11 @@ export const DOG_FAILURE = "DOG_FAILURE";
 export const DOG_SUCCESS = "DOG_SUCCESS";
 export const FILTER_TEMPERS = "FILTER_TEMPERS";
 export const FILTER_DOG_NAME = "FILTER_DOG_NAME";
+export const RESET_DOGS = "RESET_DOGS";
+export const ALPHABETIC_ASC = "ALPHABETIC_ASC";
+export const ALPHABETIC_DES = "ALPHABETIC_DES";
+export const WEIGHT_ASC = "WEIGHT_ASC";
+export const WEIGHT_DES = "WEIGHT_DES";
 
 const dogSuccess = (data) => ({ type: DOG_SUCCESS, payload: data });
 const dogRequest = () => ({ type: DOG_REQUEST });
@@ -22,5 +27,9 @@ const filterTempers = (temper)=>{
 const filterDogName = (nameDog)=>{
   return {type:FILTER_DOG_NAME,payload:nameDog};
 };
+const resetDogs = ()=>{
+  return {type:RESET_DOGS};
+};
+const orderAlphabetic=(order)=>({type:order});
 
-export { peticionDog,filterTempers,filterDogName };
+export { peticionDog,filterTempers,filterDogName,resetDogs, orderAlphabetic };

@@ -15,7 +15,7 @@ function Card({ titulo, url, tempersApi, weight }) {
         <h1>{titulo}</h1>
         <img src={image} width="180" alt={titulo} />
         <figcaption>{tempersApi}</figcaption>
-        <p>{weight}</p>
+        <p>{`${weight} kgs`}</p>
       </figure>
     </div>
   );

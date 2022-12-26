@@ -2,10 +2,25 @@ import React, { useEffect, useState } from "react";
 import Main from "./Main";
 import Navigator from "./Navigator";
 import { useSelector, useDispatch } from "react-redux";
-import { peticionDog,filterTempers,filterDogName } from "../redux/actions/dog";
+import {
+  peticionDog,
+  filterTempers,
+  filterDogName,
+  resetDogs,
+  ALPHABETIC_ASC,
+  ALPHABETIC_DES,
+  orderAlphabetic,
+  WEIGHT_ASC,
+  WEIGHT_DES
+} from "../redux/actions/dog";
 import Pagination from "./Pagination";
 
 function Home() {
+  const optionsAlf = [
+    { id: 1, name: ALPHABETIC_ASC, text: "Asendente" },
+    { id: 2, name: ALPHABETIC_DES, text: "Desendente" },
+  ];
+  const optionsWeight = [{id:1,name:WEIGHT_ASC,text:"Asendente"},{id:2,name:WEIGHT_DES,text:"Desendente"}];
   const { loading, dog, error } = useSelector((state) => state);
   const [dogs, setDogs] = useState([]);
   const [pag, setPag] = useState(1);
@@ -33,15 +48,30 @@ function Home() {
   //     setPag(page);
   //   }
   // };
-  function dogName(nameDog){
+  function dogName(nameDog) {
     dispatch(filterDogName(nameDog));
-  };
-  function temper(temperament){
+  }
+  function temper(temperament) {
     dispatch(filterTempers(temperament));
-  };
+  }
+  function resetFiltros() {
+    dispatch(resetDogs());
+  }
+  function orderGeneral(ordenamiento) {
+    dispatch(orderAlphabetic(ordenamiento));
+  }
   return (
     <div>
-      <Navigator filterTemper={temper} filterDogName={dogName}/>
+      <Navigator
+        filterTemper={temper}
+        filterDogName={dogName}
+        reset={resetFiltros}
+        alphabetic={orderGeneral}
+        optionsAlf={optionsAlf}
+        textAlf="---Ordenamiento alfabetico---"
+        textWeight="---Ordenamiento por peso---"
+        optionsWeight={optionsWeight}
+      />
       <Main loading={loading} dogs={dogs} error={error} />
       <Pagination pages={numPag} funcPage={setPag} />
     </div>
