@@ -3,6 +3,7 @@ import { Route, Switch, useLocation } from "react-router-dom";
 import Landing from './components/Landing';
 import Home from './components/Home';
 import DogDetail from './components/DogDetail';
+import Form from './components/Form';
 
 function App() {
   let {pathname} = useLocation();
@@ -14,7 +15,7 @@ function App() {
         <Home/>
       </Route>
       <Route exact path="/create">
-        <h1>Create</h1>
+        <Form></Form>
       </Route>
       <Route exact path="/dog/:id">
         <DogDetail/>

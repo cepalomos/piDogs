@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Filter from "./Filter";
 import Select from "./Select";
 
@@ -35,6 +36,9 @@ function Navigator({ filterTemper, filterDogName, reset, alphabetic,optionsAlf,t
       >
         RESET FILTROS
       </button>
+      <Link to={"/create"}><button>
+        Crear Raza
+      </button></Link>
     </div>
   );
 }
