@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
+import '../css/DogDetail.css';
 
 function DogDetail() {
   const [dog, setDog] = useState(undefined);
@@ -14,8 +15,8 @@ function DogDetail() {
   }, []);
   if (dog) {
     return (
-      <div>
-        <h1 className="contenedor_principal">{dog.name}</h1>
+      <div className="detail_main">
+        <h1 className="contenedor_titulo">{dog.name}</h1>
         <div className="contenedor_secundario">
           <div className="contenedor_imagen">
             <img
@@ -34,7 +35,7 @@ function DogDetail() {
             <h3>{`The temperaments of this breed are ${dog.temperament}`}</h3>
           </div>
         </div>
-        <Link to={"/home"}><button>Home</button></Link>
+        <Link to={"/home"}><button className="button_dogDetail">Home</button></Link>
       </div>
     );
   } else {

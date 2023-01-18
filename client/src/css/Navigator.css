@@ -1,0 +1,18 @@
+.contenedor_navigator {
+  background-color: #4b958e;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr 1fr;
+  gap: 10px;
+  align-items: center;
+  justify-items: center;
+}
+.navigator_buttom{
+  padding: 5px 0;
+  margin-bottom: 15px;
+  border: none;
+  border-radius: 15px;
+  background-color: #D1B498;
+  color: #333;
+  width: 150px;
+}

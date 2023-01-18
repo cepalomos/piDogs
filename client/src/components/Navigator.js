@@ -2,10 +2,11 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Filter from "./Filter";
 import Select from "./Select";
+import '../css/Navigator.css';
 
-function Navigator({ filterTemper, filterDogName, reset, alphabetic,optionsAlf,textAlf,optionsWeight,textWeight }) {
+function Navigator({ filterTemper, filterDogName, reset, alphabetic, optionsAlf, textAlf, optionsWeight, textWeight }) {
   return (
-    <div>
+    <div className="contenedor_navigator">
       <Filter
         name="Tempers"
         text="Ingresa las iniciales de la raza"
@@ -16,6 +17,15 @@ function Navigator({ filterTemper, filterDogName, reset, alphabetic,optionsAlf,t
         text="Ingresa iniciales del temperamento"
         func={filterTemper}
       />
+      <button
+        className="navigator_buttom"
+        onClick={(e) => {
+          e.preventDefault();
+          reset();
+        }}
+      >
+        RESET FILTROS
+      </button>
       <Select
         name="orderAlphabetic"
         options={optionsAlf}
@@ -27,16 +37,9 @@ function Navigator({ filterTemper, filterDogName, reset, alphabetic,optionsAlf,t
         options={optionsWeight}
         func={alphabetic}
         text={textWeight}
-        />
-      <button
-        onClick={(e) => {
-          e.preventDefault();
-          reset();
-        }}
-      >
-        RESET FILTROS
-      </button>
-      <Link to={"/create"}><button>
+      />
+
+      <Link to={"/create"}><button className="navigator_buttom">
         Crear Raza
       </button></Link>
     </div>

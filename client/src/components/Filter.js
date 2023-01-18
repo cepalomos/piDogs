@@ -1,11 +1,13 @@
 import React, { useState } from "react";
+import '../css/Filter.css';
 
 function Filter({ name, text, func }) {
   const [textoInput, setTextoInput] = useState("");
   return (
-    <div>
-      <label htmlFor={name}>{text}</label>
+    <div className='navigator_filter'>
+      <label htmlFor={name} className='navigator_label'>{text}</label>
       <input
+        className="navigator_input"
         type="text"
         id={name}
         name={name}
@@ -13,10 +15,12 @@ function Filter({ name, text, func }) {
         value={textoInput}
       />
       <button
+      className="button_filter"
         onClick={(e) => {
           e.preventDefault();
-          if(textoInput)
-          func(textoInput);
+          if (textoInput)
+            func(textoInput);
+            setTextoInput("");
         }}
       >
         Filtrar

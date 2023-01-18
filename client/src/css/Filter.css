@@ -1,0 +1,28 @@
+.navigator_filter {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
+  padding: 5px;
+}
+.navigator_label{
+  text-align: center;
+  color: #333;
+}
+.button_filter{
+  padding: 5px 0;
+  margin-bottom: 15px;
+  border: none;
+  border-radius: 15px;
+  background-color: #D1B498;
+  color: #333;
+  width: 150px;
+}
+.navigator_input{
+  height: 30px;
+  border: none;
+  border-radius: 15px;
+  background-color: antiquewhite;
+  margin: 5px;
+  padding: 5px;
+}

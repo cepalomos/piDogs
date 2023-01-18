@@ -1,0 +1,10 @@
+.select_contenedor{
+  display: grid;
+  justify-items: center;
+  align-items: center;
+}
+.select_items{
+  padding: 5px;
+  margin: 5px;
+  background-color: #D1B498;
+}

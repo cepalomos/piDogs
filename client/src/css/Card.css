@@ -1,0 +1,43 @@
+.card_container{
+  border-radius: 20px;
+  border: solid 4px #76b99e;
+  height: min-content;
+  display: grid;
+  grid-template-rows: 150px 1.5fr min-content min-content;
+  justify-items: center;
+  margin: 7px;
+  box-shadow: 2px 2px 5px #4b958e;
+}
+.card_container img{
+  width: 80%;
+  height: 200px;
+  object-fit: contain;
+  margin: 10px;
+  border-radius: 50%;
+}
+.card_titulo{
+  text-align: center;
+  font-size: 2.2rem;
+  font-weight: bolder;
+  margin-bottom: 12px;
+  align-self: center;
+  text-decoration: none;
+}
+.card_container figcaption{
+  text-align: center;
+  font-size: 1rem;
+  font-weight: bolder;
+  padding: 5px;
+  margin-bottom: 5px;
+}
+.card_container p{
+  text-align: center;
+  font-size: 1rem;
+  font-weight: bolder;
+  padding: 5px;
+  margin-bottom: 5px;
+}
+.card_container:hover{
+  background-color: #4b958e;
+  border: solid 3px #d1b49b;
+}

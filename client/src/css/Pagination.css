@@ -1,0 +1,16 @@
+.contenedor_pagination ul{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.contenedor_pagination ul li{
+  text-decoration: none;
+  list-style: none;
+}
+.button_pagination{
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  background: #ffe4c9;
+  margin: 20px 5px;
+}

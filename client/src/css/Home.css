@@ -1,0 +1,10 @@
+.contenedor_home{
+  background-color: #a8d7c3;
+  width:100vw;
+  display: grid;
+
+}
+*{
+  margin: 0;
+  padding: 0;
+}

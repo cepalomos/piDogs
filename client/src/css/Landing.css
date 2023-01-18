@@ -1,0 +1,24 @@
+.container_landing {
+  width: 100%;
+  display: inline-block;
+  position: relative;
+}
+*{
+  margin: 0;
+  padding: 0;
+}
+.image_landing{
+  padding: 0;
+  margin: 0;
+  width: 100vh;
+}
+.button_landing{
+  position: absolute;
+bottom:4em;
+right:50%;
+background-color:#8F0005;
+border-radius:1.5em;
+color:white;
+text-transform:uppercase;
+padding:1em 1.5em;
+}

@@ -1,4 +1,5 @@
 import React from "react";
+import '../css/Select.css';
 
 function Select({ name: nameProp, options, func, text }) {
   const name = nameProp ?? "Default";
@@ -17,8 +18,9 @@ function Select({ name: nameProp, options, func, text }) {
     ];
   }
   return (
-    <div>
+    <div className="select_contenedor">
       <select
+      className="select_items"
         name={name}
         onChange={({ target: { value } }) => {
           func(value);

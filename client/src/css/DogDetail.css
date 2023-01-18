@@ -1,0 +1,46 @@
+.detail_main{
+  background-color: #a8d7c3;
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  height: 100%;
+}
+.contenedor_titulo{
+  text-align: center;
+  font-size: 4rem;
+  font-weight: bolder;
+  margin: 20px 5px;
+  align-self: center;
+  text-transform: uppercase;
+}
+.contenedor_secundario{
+  display: grid;
+  grid-template-columns: minmax(150px,1.5fr) minmax(100px,1fr);
+  gap: 20px;
+  align-items: center;
+  justify-items: center;
+  box-shadow: 1px 1px 2px rgb(216, 214, 214);
+}
+.contenedor_imagen img{
+  border-radius: 50%;
+  width: 100%;
+  object-fit: contain;
+}
+.contenedor_datos h3{
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: bolder;
+  margin: 20px 5px;
+  align-self: center;
+}
+.button_dogDetail{
+  border: none;
+  border-radius: 10px;
+  margin: 30px;
+  padding: 5px 20px;
+  width: min-content;
+}
+.button_dogDetail:hover{
+  border: solid 5px blue;
+  background-color: #ffe4c9;
+}

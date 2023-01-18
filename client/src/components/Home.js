@@ -14,13 +14,14 @@ import {
   WEIGHT_DES
 } from "../redux/actions/dog";
 import Pagination from "./Pagination";
+import '../css/Home.css';
 
 function Home() {
   const optionsAlf = [
     { id: 1, name: ALPHABETIC_ASC, text: "Asendente" },
     { id: 2, name: ALPHABETIC_DES, text: "Desendente" },
   ];
-  const optionsWeight = [{id:1,name:WEIGHT_ASC,text:"Asendente"},{id:2,name:WEIGHT_DES,text:"Desendente"}];
+  const optionsWeight = [{ id: 1, name: WEIGHT_ASC, text: "Asendente" }, { id: 2, name: WEIGHT_DES, text: "Desendente" }];
   const { loading, dog, error } = useSelector((state) => state);
   const [dogs, setDogs] = useState([]);
   const [pag, setPag] = useState(1);
@@ -61,8 +62,9 @@ function Home() {
     dispatch(orderAlphabetic(ordenamiento));
   }
   return (
-    <div>
+    <div className="contenedor_home">
       <Navigator
+        className='nav_home'
         filterTemper={temper}
         filterDogName={dogName}
         reset={resetFiltros}
@@ -72,8 +74,8 @@ function Home() {
         textWeight="---Ordenamiento por peso---"
         optionsWeight={optionsWeight}
       />
-      <Main loading={loading} dogs={dogs} error={error} />
-      <Pagination pages={numPag} funcPage={setPag} />
+      <Main className='main_home' loading={loading} dogs={dogs} error={error} />
+      <Pagination className='footer_home' pages={numPag} funcPage={setPag} />
     </div>
   );
 }
