@@ -15,7 +15,7 @@ function Form() {
     })()
   }, [])
   return (
-    <div>
+    <div className='form_principal'>
       <form className='form_contenedor'>
         <h1 className='form_titulo'>Crear raza de perro</h1>
         <fieldset className='form_fieldset_especial'>
