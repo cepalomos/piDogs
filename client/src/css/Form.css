@@ -1,0 +1,109 @@
+* {
+  background-color: #a8d7c3;
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', 'Courier New', Courier, monospace;
+}
+
+.form_contenedor {
+  border-radius: 20px;
+  width: 80%;
+  margin: 30px auto;
+}
+
+.form_titulo {
+  font-size: 3em;
+  font-weight: bolder;
+  font-style: oblique;
+  text-transform: capitalize;
+  margin: 30px 0;
+}
+
+.form_fieldset {
+  border: solid 5px #4b958b;
+  border-radius: 15px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-auto-flow: column;
+  align-items: center;
+  justify-items: center;
+  background-color: #76b99e;
+}
+
+.form_fieldset_especial {
+  border: solid 5px #4b958b;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  background-color: #76b99e;
+}
+
+#form_temper {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.form_label {
+  margin: 15px 0;
+  justify-self: center;
+  align-self: center;
+  text-transform: capitalize;
+  font-size: 1em;
+  font-weight: 600;
+  background-color: #76b99e;
+}
+
+.form_contenedor input {
+  border: solid 3px #76b99e;
+  border-radius: 15px;
+  width: 200px;
+  height: min-content;
+  margin: 20px 0;
+  text-align: center;
+  text-justify: center;
+}
+
+.form_caja_temperamento {
+  width: 400px;
+  height: 200px;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 10px 0 30px 0;
+  padding: 5px;
+  justify-content: center;
+}
+
+.form_caja_temperamento ul {
+  list-style: none;
+  width: 95%;
+  height: 95%;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 10px 0 30px 0;
+  padding: 5px;
+  justify-content: center;
+}
+
+.form_li {
+  border: #4b958b solid 1px;
+  padding: 5px;
+  margin: 5px;
+  width: min-content;
+  height: min-content;
+  display: flex;
+}
+
+.form_li button {
+  margin-left: 15px;
+  width: min-content;
+  height: min-content;
+  align-content: flex-end;
+}
