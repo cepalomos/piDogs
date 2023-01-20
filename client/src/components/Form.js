@@ -39,6 +39,10 @@ function Form() {
           <label htmlFor='ano-max' className='form_label'>Años Maximo de Vida</label>
           <input type={'number'} id="ano-max" onChange={({ target: { value } }) => setData({ ...data, anoMax: value })} value={data.anoMax}></input>
         </fieldset>
+         <fieldset>
+            <legend>Descripcion</legend>
+            <input type={'text'} onChange={({target:{value}})=>{setData([...data,descripcion:value])} value={data.descripcion}/>
+            </fieldset>
         <fieldset className='form_fieldset' id='form_temper'>
           <legend className='form_legend'>Temperamento</legend>
           <label htmlFor='temper' className='form_label'>Escoge los temperamentos de la raza</label>
