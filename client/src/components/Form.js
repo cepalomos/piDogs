@@ -79,13 +79,14 @@ function Form() {
         </fieldset>
         <button className='form_button' onClick={async (e) => {
           e.preventDefault();
-          const { nombre, alturaMax, alturaMin, pesoMax, pesoMin, anoMax, anoMin } = data;
+          const { nombre, alturaMax, alturaMin, pesoMax, pesoMin, anoMax, anoMin,descripcion } = data;
           const dog = {
-            name: nombre, height: `${alturaMin}-${alturaMax}`, weight: `${pesoMin}-${pesoMax}`, life_span: `${anoMin}-${anoMax}`, tempers: temperamento.map(nameTemper => {
+            name: nombre, height: `${alturaMin}-${alturaMax}`, weight: `${pesoMin}-${pesoMax}`, life_span: `${anoMin}-${anoMax}`,descripcion, tempers: temperamento.map(nameTemper => {
               const aux = temperApi.find(({ name }) => name === nameTemper);
               return aux.id;
             })
           }
+          console.log(dog);
           const response = await fetch("http://localhost:3001/dogs", {
             method: 'POST',
             body: JSON.stringify(dog),
