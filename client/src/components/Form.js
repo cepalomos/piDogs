@@ -41,7 +41,7 @@ function Form() {
         </fieldset>
          <fieldset>
             <legend>Descripcion</legend>
-            <input type={'text'} onChange={({target:{value}})=>{setData([...data,descripcion:value])} value={data.descripcion}/>
+            <input type={'text'} onChange={({target:{value}})=>{setData({...data,descripcion:value})} value={data.descripcion}/>
             </fieldset>
         <fieldset className='form_fieldset' id='form_temper'>
           <legend className='form_legend'>Temperamento</legend>
